@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
+
+:root {
+  --pink-logo: rgb(252, 1, 143);
+  --azul-celeste: rgb(142, 216, 250);
+  --rosa: rgb(255, 174, 201);
+  --rosa-bebê: rgb(244, 226, 230);
+  --cinza: rgb(99, 97, 97);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--azul-celeste);
+  position: relative;
+}
+
+header {
+  background-color: var(--rosa-bebê);
+  width: 100%;
+  height: 8rem;
+  color: var(--pink-logo);
+  font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.8rem gray;
+  position: fixed;
+  z-index: 2;
+}
+
+.logo {
+  width: 30%;
+}
+header img {
+  width: 30%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+nav {
+  width: 70%;
+}
+
+nav ul {
+  --_gap: 6rem;
+  display: flex;
+  justify-content: end;
+  margin-right: 10rem;
+  flex-direction: row;
+  list-style: none;
+}
+
+nav li {
+  overflow: hidden;
+  position: relative;
+  padding-inline: calc(var(--_gap) / 2);
+  opacity: 0.7;
+}
+
+nav li:hover {
+  opacity: 1.2;
+  letter-spacing: 1px;
+}
+
+nav li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background: linear-gradient(to right, var(--rosa) 30%, var(--pink-logo));
+  transition: all 0.8s ease;
+}
+
+nav li:hover::after {
+  width: 100%;
+}
+
+nav a {
+  font-family: "Tinos", serif;
+  color: var(--pink-logo);
+}
+
+.logo-movie img {
+  width: 10rem;
+  height: 8rem;
+  margin-top: 9rem;
+  margin-left: 60%;
+}
+
+.logo-movie {
+  color: var(--pink-logo);
+  font-size: 4rem;
+  font-family: "Tinos", serif;
+  font-weight: 800;
+  margin-left: -8rem;
+}
+
+h1 {
+  font-family: "Licorice", cursive;
+  font-size: 10rem;
+  color: var(--pink-logo);
+  font-weight: 700;
+  left: -44rem;
+  transform: rotate(-30deg);
+  position: absolute;
+  animation-duration: 1s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-shadow: 0.08em 0.08em 0.08em grey;
+  position: fixed;
+  z-index: 5;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-30deg);
+  }
+  to {
+    transform: rotate(-20deg);
+  }
+}
+
+.banner-space {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.banner {
+  width: 60%;
+  transform: translateX(20%);
+  height: 30rem;
+  outline: none;
+  box-shadow: 0.5rem 0.5rem 1rem gray;
+  border-radius: 1rem;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.trailer-container {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 5rem;
+  width: 100%;
+}
+
+.content {
+  width: 45%;
+}
+
+.trailer {
+  width: 100%;
+  box-shadow: 0.5rem 0.5rem 1rem gray;
+  border-radius: 0.8rem;
+}
+
+.sinopse {
+  width: 45%;
+  font-size: 2.3rem;
+  color: var(--cinza);
+  text-align: justify;
+  font-family: "Tinos", serif;
+}
+.ingresso {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+h2 {
+  text-align: end;
+  width: 70%;
+  font-size: 3rem;
+  color: var(--pink-logo);
+  font-family: "Tinos", serif;
+}
+.ingresso button a {
+  color: var(--pink-logo);
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Tinos", serif;
+}
+
+.ingresso button {
+  padding: 1rem 2rem;
+  background-color: var(--rosa);
+  outline: none;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.8rem gray;
+}
+.ingresso button:hover {
+  box-shadow: inset 0.2rem 0.2rem 0.8rem gray;
+}
+
+@media all and (max-width: 1030px) {
+  header img {
+    width: 28%;
+    height: 4.5rem;
+  }
+  nav ul {
+    --_gap: 5rem;
+  }
+
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+  }
+
+  nav a {
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-size: 8.5rem;
+    left: -25rem;
+    top: -2rem;
+  }
+  .banner {
+    width: 70%;
+    transform: translateX(8rem);
+  }
+  .logo-movie img {
+    transform: translateX(3rem);
+  }
+  .sinopse {
+    font-size: 1.4rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  header img {
+    width: 28%;
+    height: 4.5rem;
+  }
+
+  nav ul {
+    --_gap: 0.7rem;
+    margin-right: 4rem;
+  }
+
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+    margin-left: 2rem;
+  }
+
+  nav a {
+    font-size: 1.8rem;
+  }
+  h1 {
+    font-size: 7rem;
+    left: -18rem;
+    top: -2rem;
+  }
+
+  .logo-movie img {
+    height: 6rem;
+    transform: translateX(0.7rem);
+  }
+
+  .logo-movie {
+    margin-left: -3rem;
+  }
+  .banner {
+    width: 70%;
+  }
+  .trailer-container {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .content {
+    width: 50%;
+  }
+  .sinopse {
+    font-size: 1.2rem;
+  }
+}
+
+@media all and (max-width: 430px) {
+  header img {
+    width: 5rem;
+    height: 4rem;
+  }
+  nav ul {
+    --_gap: 2rem;
+    margin-right: 0;
+  }
+
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 1.3rem;
+  }
+  h1 {
+    font-size: 5rem;
+    top: -2rem;
+    left: -1rem;
+  }
+  .banner {
+    width: 96%;
+    height: 40%;
+    transform: translateX(-0.5rem);
+  }
+  .banner img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-movie img {
+    width: 7rem;
+    height: 4rem;
+  }
+  .logo-movie {
+    font-size: 3rem;
+  }
+  .trailer-container {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  .content {
+    width: 100%;
+  }
+
+  .sinopse {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+  }
+  .ingresso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .ingresso button {
+    margin-right: 1rem;
+  }
+  .ingresso button a {
+    font-size: 1.3rem;
+  }
+}
+
+@media all and (max-width: 360px) {
+  header {
+    display: block;
+    height: 6.5rem;
+  }
+  nav {
+    transform: translateX(5rem);
+  }
+  nav li {
+    padding: 5px;
+  }
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 2rem;
+  }
+  h1 {
+    font-size: 4.5rem;
+    top: -4rem;
+    left: 0.3rem;
+  }
+  .banner {
+    width: 97%;
+    height: 40%;
+    transform: translateX(-0.2rem);
+  }
+  .banner img {
+    width: 100%;
+    height: 100%;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  .ingresso button a {
+    font-size: 1.3rem;
+  }
+}

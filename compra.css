@@ -1,0 +1,704 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
+
+:root {
+  --pink-logo: rgb(252, 1, 143);
+  --azul-celeste: rgb(142, 216, 250);
+  --rosa: rgb(255, 174, 201);
+  --rosa-bebê: rgb(244, 226, 230);
+  --cinza: rgb(99, 97, 97);
+  --cinza-escuro: rgb(92, 91, 91);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--azul-celeste);
+}
+
+header {
+  background-color: var(--rosa-bebê);
+  height: 8rem;
+  color: var(--pink-logo);
+  font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.8rem gray;
+}
+
+.logo {
+  width: 30%;
+}
+header img {
+  width: 30%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+nav {
+  width: 70%;
+}
+
+nav ul {
+  --_gap: 6rem;
+  display: flex;
+  justify-content: end;
+  margin-right: 10rem;
+  flex-direction: row;
+  list-style: none;
+}
+
+nav li {
+  position: relative;
+  padding-inline: calc(var(--_gap) / 2);
+  opacity: 0.7;
+}
+
+nav li:hover {
+  opacity: 1.2;
+  letter-spacing: 1px;
+}
+
+nav li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background: linear-gradient(to right, var(--rosa) 30%, var(--pink-logo));
+  transition: all 0.8s ease;
+}
+
+nav li:hover::after {
+  width: 100%;
+}
+
+nav a {
+  font-family: "Tinos", serif;
+  color: var(--pink-logo);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  height: 90%;
+}
+.container-escolher-sessao,
+.container-escolher-assentos,
+.container-finalizar-compra {
+  width: 32%;
+}
+
+.step1,
+.step2,
+.step3 {
+  font-family: "Tinos", serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-left: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--pink-logo) 30%, rgb(25, 0, 255));
+  background-size: 200% 100%;
+  animation: gradient 2s linear infinite alternate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradient {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+#choose-session,
+#choose-seats,
+#finalizar-compra {
+  box-shadow: 0.5rem 0.5rem 1rem gray;
+  border-radius: 1rem;
+  display: flex;
+  background-color: var(--azul-celeste);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65rem;
+  position: relative;
+}
+
+#choose-session h1,
+#choose-seats h1,
+#finalizar-compra h1 {
+  font-size: 5rem;
+  color: var(--pink-logo);
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  margin: 1rem 0 1rem 0;
+  text-align: center;
+}
+.cinema-address {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+
+.address {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.cinema-address .session-span-required {
+  position: absolute;
+  right: 8rem;
+  transform: translateY(3%);
+  display: none;
+}
+.date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cinema-date .session-span-required {
+  position: absolute;
+  right: 10rem;
+  bottom: 40%;
+  color: var(--pink-logo);
+  display: none;
+}
+
+input#date {
+  transform: translateX(-1rem);
+  background: transparent url(./imagens/calendar-bg.png);
+  background-repeat: no-repeat;
+  background-size: 3.2rem;
+  background-position: 100%;
+  width: 16rem;
+  height: 4rem;
+  outline: none;
+  border: 0.7px solid var(--pink-logo);
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  color: var(--pink-logo);
+  font-weight: 100;
+  cursor: pointer;
+  font-family: "Tinos", serif;
+  text-align: center;
+}
+
+input#date::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.cinema-session-time .session-span-required {
+  position: absolute;
+  right: 10rem;
+  bottom: 20%;
+  color: var(--pink-logo);
+  display: none;
+}
+
+#schedule {
+  background-color: var(--rosa);
+  color: var(--pink-logo);
+  font-weight: 700;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  font-family: "Tinos", serif;
+  box-shadow: 0.2rem 0.2rem 0.8rem gray;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 6rem;
+  border-radius: 10px;
+}
+#schedule:hover {
+  box-shadow: inset 0.2rem 0.2rem 0.8rem gray;
+}
+
+#address-chosen,
+#date-scheduled,
+#session-chosen,
+#n-assento,
+#written-name,
+#num-ticket {
+  display: none;
+}
+.session-time button {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 10%;
+  border: 0.8px solid var(--pink-logo);
+  color: var(--pink-logo);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  outline: none;
+}
+.session-time button:checked {
+  background-color: var(--rosa);
+}
+
+#time1,
+#time2,
+#time3 {
+  display: none;
+}
+
+.selection {
+  cursor: pointer;
+  user-select: none;
+}
+
+.active {
+  background-color: var(--rosa);
+  box-shadow: inset 0.2rem 0.2rem 0.8rem gray;
+}
+
+#warning {
+  color: var(--pink-logo);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-left: 3.5rem;
+  display: none;
+}
+
+.seats {
+  background-color: rgba(165, 164, 164, 0.973);
+  display: flex;
+  text-align: center;
+  padding: 0.7rem;
+  width: 2.7rem;
+  height: 2.6rem;
+  border-radius: 0.8rem;
+  margin: 0.1rem;
+  cursor: pointer;
+  font-weight: 550;
+  transition: 1s;
+}
+
+.seats:hover {
+  transform: scale(1.5);
+}
+
+.aisle {
+  margin-right: 2rem;
+}
+
+.display-cinema {
+  border-top: 4px solid var(--pink-logo);
+  border-top-left-radius: 15%;
+  border-top-right-radius: 15%;
+  margin: 0.5rem;
+  padding-top: 5rem;
+}
+.display-cinema ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.total-purchase {
+  text-align: center;
+  margin: 1rem;
+  color: var(--pink-logo);
+  font-size: 2rem;
+}
+
+#total-price {
+  font-weight: 700;
+  margin-bottom: -0.7rem;
+}
+
+#forward,
+#next-btn,
+#finalizar {
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  background-color: var(--rosa);
+  color: var(--pink-logo);
+  font-family: "Tinos", serif;
+  box-shadow: 0.2rem 0.2rem 0.8rem gray;
+  font-size: 1.5rem;
+  bottom: 1.5rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  position: absolute;
+}
+
+#forward:hover,
+#finalizar:hover,
+#next-btn:hover {
+  box-shadow: inset 0.2rem 0.2rem 0.8rem gray;
+}
+
+#legenda {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: -0.7rem;
+  font-size: 1.2rem;
+}
+.light-grey {
+  background-color: rgba(165, 164, 164, 0.973);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.8rem;
+}
+
+.grey-seat {
+  background-color: var(--rosa);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.8rem;
+}
+
+.pink-seat {
+  background-color: var(--pink-logo);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.8rem;
+}
+
+.selected {
+  background-color: var(--rosa);
+}
+
+.ocupied {
+  background-color: var(--pink-logo);
+}
+
+li {
+  display: block;
+  flex-direction: column;
+}
+.pix {
+  transform: translateX(-5rem);
+}
+
+.pix img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.pix p span {
+  text-decoration: line-through;
+}
+
+.cadastro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 2.5rem;
+  color: var(--pink-logo);
+  font-family: "Tinos", serif;
+  margin-top: 3rem;
+  width: 90%;
+}
+.span-required {
+  position: absolute;
+  right: 1.7rem;
+  display: none;
+}
+
+.sp-req {
+  bottom: 17.5rem;
+  right: 6rem;
+}
+
+.choose {
+  display: flex;
+  justify-content: center;
+  font-size: 3.2rem;
+  padding: 1.5rem;
+  color: var(--pink-logo);
+}
+
+.credit-card {
+  transform: translateX(-1.6rem);
+}
+
+input#pix-check,
+input#credit-card-check {
+  width: 6rem;
+  cursor: pointer;
+}
+
+input#credit-card-check {
+  transform: translateX(0.7rem);
+}
+
+.pix,
+.credit-card,
+.credit-card-behind,
+.input-box {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.3rem;
+}
+
+.credit-card-behind input {
+  width: 7rem;
+  padding-top: 1.7rem;
+}
+
+#credit-card,
+#cvv-code,
+#expired {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.8px solid var(--pink-logo);
+  border-radius: 3px;
+  outline: none;
+  color: var(--cinza);
+  font-size: 2rem;
+}
+
+#credit-card::placeholder,
+#cvv-code::placeholder,
+#expired::placeholder,
+#cel::placeholder {
+  padding-left: 0.7rem;
+  color: var(--cinza);
+  font-size: 1.6rem;
+}
+.input-box input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.8px solid var(--pink-logo);
+  border-radius: 3px;
+  outline: none;
+  margin-right: 1rem;
+  display: flex;
+  padding-top: 1.7rem;
+  width: 100%;
+  color: var(--cinza);
+  padding-left: 0.7rem;
+  font-size: 2rem;
+}
+
+.credit-card input {
+  width: 100%;
+  font-size: 2rem;
+}
+
+#written-name,
+.input-box #name {
+  text-transform: capitalize;
+}
+
+.credit-card-behind {
+  margin-bottom: 3rem;
+}
+
+.credit-card-behind label {
+  transform: translateY(1rem);
+}
+
+.email label,
+.cel label {
+  transform: translateY(1rem);
+}
+
+.credit-card label {
+  transform: translateX(1rem);
+}
+
+.opcoes-sessao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 1.8rem;
+  color: var(--pink-logo);
+  font-family: "Tinos", serif;
+  margin-top: 2rem;
+}
+
+.pix input,
+.credit-card input,
+.address input {
+  accent-color: var(--pink-logo);
+}
+
+@media all and (max-width: 1030px) {
+  header img {
+    width: 28%;
+    height: 4.5rem;
+  }
+  nav ul {
+    --_gap: 5rem;
+  }
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+  }
+
+  nav a {
+    font-size: 2.5rem;
+  }
+  main {
+    gap: 0.3rem;
+  }
+  #choose-session h1,
+  #choose-seats h1,
+  #finalizar-compra h1 {
+    font-size: 3.8rem;
+  }
+  .choose {
+    font-size: 3rem;
+  }
+  .aisle {
+    margin-right: 1.6rem;
+  }
+  .cadastro {
+    font-size: 2rem;
+  }
+  .credit-card {
+    transform: translateX(-1rem);
+  }
+  .pix {
+    transform: translateX(-3.6rem);
+  }
+  #credit-card::placeholder,
+  #cvv-code::placeholder,
+  #expired::placeholder,
+  #cel::placeholder {
+    font-size: 1.4rem;
+  }
+  #credit-card,
+  #cvv-code,
+  #expired {
+    font-size: 1.7rem;
+  }
+  .input-box input {
+    font-size: 1.7rem;
+  }
+  .credit-card-behind input {
+    width: 5rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  header img {
+    width: 28%;
+    height: 4.5rem;
+  }
+
+  nav ul {
+    --_gap: 0.5rem;
+    margin-right: 4rem;
+  }
+
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+    margin-left: 2rem;
+  }
+
+  nav a {
+    font-size: 1.8rem;
+  }
+  main {
+    display: block;
+  }
+  .container-escolher-sessao,
+  .container-escolher-assentos,
+  .container-finalizar-compra {
+    width: 100%;
+  }
+  .step1,
+  .step2,
+  .step3 {
+    text-align: center;
+  }
+  #choose-session,
+  #choose-seats,
+  #finalizar-compra {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .pix {
+    transform: translateX(-7.5rem);
+  }
+}
+
+@media all and (max-width: 430px) {
+  header img {
+    width: 5rem;
+    height: 4rem;
+  }
+  nav ul {
+    --_gap: 0.7rem;
+    margin-right: 1rem;
+  }
+
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 1.3rem;
+  }
+  .pix {
+    transform: translateX(-4.8rem);
+  }
+}
+@media all and (max-width: 360px) {
+  header {
+    display: block;
+    height: 6.5rem;
+  }
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 3.8rem;
+  }
+  nav {
+    transform: translateX(5rem);
+  }
+  nav li {
+    padding: 4px;
+  }
+  nav ul {
+    --gap: 2rem;
+    bottom: 0.3rem;
+    margin-right: 1.3rem;
+  }
+  .pix {
+    transform: translateX(-2.2rem);
+  }
+}

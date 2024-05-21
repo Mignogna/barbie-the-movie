@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./ingresso.css" />
+    <link
+      rel="shortcut icon"
+      href="./imagens/logobg.jpeg"
+      type="image/x-icon"
+    />
+    <title>Ingresso | Barbie</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./">
+          <img src="./imagens/logobg.jpeg" alt="Logo da Barbie"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <a href="./index.html"><li>Home</li></a>
+          <a href="./elenco.html"><li>Elenco</li></a>
+          <a href="./compra.html"><li>Comprar Ingresso</li></a>
+          <a href="./ingresso.html"><li>Ingresso</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="ticket-container"></div>
+      <div id="tkt-msg" class="tkt-message">
+        <p>
+          Você pode comprar seu bilhete na aba
+          <a href="./compra.html" style="color: rgb(252, 1, 143)"
+            ><i>Comprar Ingresso.</i></a
+          >
+        </p>
+        <br />
+        <p>Caso feito, clique no botão abaixo.</p>
+        <br />
+        <button id="view-tkt" onclick="removeMessage()">
+          Visualizar Ingresso
+        </button>
+      </div>
+    </main>
+    <footer>
+      Site criado e realizado por:<br />Helena Mignogna | fevereiro/2024
+    </footer>
+    <script src="./ingresso.js"></script>
+  </body>
+</html>

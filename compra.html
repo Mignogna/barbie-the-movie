@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="compra.css" />
+    <link rel="shortcut icon" href="imagens/logobg.jpeg" type="image/x-icon" />
+    <title>Comprar Ingresso - Barbie</title>
+  </head>
+  <body>
+    <header>
+      <a href="./">
+      <div class="logo">
+        <img src="./imagens/logobg.jpeg" alt="Logo da Barbie" /></a>
+      </div>
+      <nav>
+        <ul>
+          <a href="./index.html"><li>Home</li></a>
+          <a href="./elenco.html"><li>Elenco</li></a>
+          <a href="./compra.html"><li>Comprar Ingresso</li></a>
+          <a href="./ingresso.html"><li>Ingresso</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="container-escolher-sessao">
+        <div class="step1">Passo 1</div>
+        <form id="choose-session">
+          <h1>Escolher sessão</h1>
+          <div class="opcoes-sessao">
+            <div class="cinema-address">
+              <p class="choose">Endereços:</p>
+              <div class="session-span-required"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" 
+                fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+                <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
+              </svg></div>
+            </div>
+              <div class="address">
+                <input
+                  type="radio"
+                  id="address1"
+                  name="address"
+                  value="CINE BELA VISTA - Av. São Lourenço, 1574"
+                  class="session-required"
+                  onclick="validatingAddress()"
+                />
+                CINE BELA VISTA - Av. São Lourenço, 1574
+              </div>
+
+              <div class="address">
+                <input
+                  type="radio"
+                  id="address2"
+                  name="address"
+                  value="CINE REPÚBLICA - Av. Juscelino Kubtscheck,1080
+                  " class="session-required
+                  " onclick="validatingAddress()"
+                />
+                CINE REPÚBLICA - Av. Juscelino Kubtscheck,1080
+              </div>
+              <div id="address-chosen"></div>
+            </div>
+
+            <div class="cinema-date">
+              <p class="choose">Data:</p>
+              <div class="session-span-required"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" 
+                fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+                <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
+              </svg></div>
+            </div>
+              <div class="date">
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  value=" "
+                  class="session-required"
+                  min="2023-07-21"
+                  max="2023-09-10"
+                  class="session-required"
+                  onclick="validatingDate()"
+                />
+                <button id="schedule" onclick="handleDateChange()">Agendar</button>
+              </div>
+              <div id="date-scheduled"></div>
+            </div>
+
+            <div class="cinema-session-time">
+              <p class="choose">Sessão:</p>
+              <div class="session-span-required"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" 
+                fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+                <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
+              </svg></div>
+            </div>
+              <div class="session-time" >
+                <button id="btn16"><input type="radio" id="time1" name="session" value="16h"  class="session-required" onclick="validatingTime()"></input>
+                <label class="selection" for="time1">16h</label></button>
+                <button id="btn18"><input type="radio" id="time2" name="session" value="18.30h" class="session-required" onclick="validatingTime()"></input>
+                <label class="selection" for="time2">18.30h</label></button>
+                <button id="btn21"><input type="radio" id="time3" name="session" value="21h" class="session-required" onclick="validatingTime()"></input>
+                <label class="selection" for="time3">21h</label></button>
+              </div>
+              <div id="session-chosen"></div>
+            </div>
+          </div>
+          <button type="submit"   id="forward">Avançar</button>
+        </form>
+      </section>
+      <section class="container-escolher-assentos">
+        <div class="step1">Passo 2</div>
+        <section id="choose-seats">
+          <h1>Escolher assento</h1>
+          <div class="screen-cinema"></div>
+          <div class="display-cinema">
+        <span id="warning">Você ainda não escolheu seu assento</span>
+            <ul>
+              <li id="1A" class="seats" onclick="selectSeat(this)">
+                1A</li>
+
+              <li id="2A" class="seats" onclick="selectSeat(this)">
+                2A
+              </li>
+              <li id="3A" class="seats aisle" onclick="selectSeat(this)">
+                3A
+              </li>
+              <li id="4A" class="seats" onclick="selectSeat(this)">
+                4A
+              </li>
+              <li id="5A" class="seats" onclick="selectSeat(this)">
+                5A
+              </li>
+              <li id="6A" class="seats" onclick="selectSeat(this)">
+                6A
+              </li>
+              <li id="7A" class="seats aisle" onclick="selectSeat(this)">
+                7A
+              </li>
+              <li id="8A" class="seats" onclick="selectSeat(this)">
+                8A
+              </li>
+              <li id="9A" class="seats" onclick="selectSeat(this)">
+                9A
+              </li>
+              <li id="10A" class="seats" onclick="selectSeat(this)">
+                10A
+              </li>
+            </ul>
+
+            <ul>
+              <li id="1B" class="seats" onclick="selectSeat(this)">
+                1B
+              </li>
+              <li id="2B" class="seats" onclick="selectSeat(this)">
+                2B
+              </li>
+              <li id="3B" class="seats aisle" onclick="selectSeat(this)">
+                3B
+              </li>
+              <li id="4B" class="seats" onclick="selectSeat(this)">
+                4B
+              </li>
+              <li id="5B" class="seats" onclick="selectSeat(this)">
+                5B
+              </li>
+              <li id="6B" class="seats" onclick="selectSeat(this)">
+                6B
+              </li>
+              <li id="7B" class="seats aisle" onclick="selectSeat(this)">
+                7B
+              </li>
+              <li id="8B" class="seats" onclick="selectSeat(this)">
+                8B
+              </li>
+              <li id="9B" class="seats" onclick="selectSeat(this)">
+                9B
+              </li>
+              <li id="10B" class="seats" onclick="selectSeat(this)">
+                10B
+              </li>
+            </ul>
+
+            <ul>
+              <li id="1C" class="seats" onclick="selectSeat(this)">
+                1C
+              </li>
+              <li id="2C" class="seats" onclick="selectSeat(this)">
+                2C
+              </li>
+              <li id="3C" class="seats aisle" onclick="selectSeat(this)">
+                3C
+              </li>
+              <li id="4C" class="seats" onclick="selectSeat(this)">
+                4C
+              </li>
+              <li id="5C" class="seats" onclick="selectSeat(this)">
+                5C
+              </li>
+              <li id="6C" class="seats" onclick="selectSeat(this)">
+                6C
+              </li>
+              <li id="7C" class="seats aisle" onclick="selectSeat(this)">
+                7C
+              </li>
+              <li id="8C" class="seats" onclick="selectSeat(this)">
+                8C
+              </li>
+              <li id="9C" class="seats" onclick="selectSeat(this)">
+                9C
+              </li>
+              <li id="10C" class="seats" onclick="selectSeat(this)">
+                10C
+              </li>
+            </ul>
+
+            <ul>
+              <li id="1D" class="seats" onclick="selectSeat(this)">
+                1D
+              </li>
+              <li id="2D" class="seats" onclick="selectSeat(this)">
+                2D
+              </li>
+              <li id="3D" class="seats aisle" onclick="selectSeat(this)">
+                3D
+              </li>
+              <li id="4D" class="seats" onclick="selectSeat(this)">
+                4D
+              </li>
+              <li id="5D" class="seats" onclick="selectSeat(this)">
+                5D
+              </li>
+              <li id="6D" class="seats" onclick="selectSeat(this)">
+                6D
+              </li>
+              <li id="7D" class="seats aisle" onclick="selectSeat(this)">
+                7D
+              </li>
+              <li id="8D" class="seats" onclick="selectSeat(this)">
+                8D
+              </li>
+              <li id="9D" class="seats" onclick="selectSeat(this)">
+                9D
+              </li>
+              <li id="10D" class="seats" onclick="selectSeat(this)">
+                10D
+              </li>
+            </ul>
+
+            <ul>
+              <li id="1E" class="seats" onclick="selectSeat(this)">
+                1E
+              </li>
+              <li id="2E" class="seats" onclick="selectSeat(this)">
+                2E
+              </li>
+              <li id="3E" class="seats aisle" onclick="selectSeat(this)">
+                3E
+              </li>
+              <li id="4E" class="seats" onclick="selectSeat(this)">
+                4E
+              </li>
+              <li id="5E" class="seats" onclick="selectSeat(this)">
+                5E
+              </li>
+              <li id="6E" class="seats" onclick="selectSeat(this)">
+                6E
+              </li>
+              <li id="7E" class="seats aisle" onclick="selectSeat(this)">
+                7E
+              </li>
+              <li id="8E" class="seats" onclick="selectSeat(this)">
+                8E
+              </li>
+              <li id="9E" class="seats" onclick="selectSeat(this)">
+                9E
+              </li>
+              <li id="10E" class="seats" onclick="selectSeat(this)">
+                10E
+              </li>
+            </ul>
+
+            <ul>
+              <li id="1F" class="seats" onclick="selectSeat(this)">
+                1F
+              </li>
+              <li id="2F" class="seats" onclick="selectSeat(this)">
+                2F
+              </li>
+              <li id="3F" class="seats aisle" onclick="selectSeat(this)">
+                3F
+              </li>
+              <li id="4F" class="seats" onclick="selectSeat(this)">
+                4F
+              </li>
+              <li id="5F" class="seats" onclick="selectSeat(this)">
+                5F
+              </li>
+              <li id="6F" class="seats" onclick="selectSeat(this)">
+                6F
+              </li>
+              <li id="7F" class="seats aisle" onclick="selectSeat(this)">
+                7F
+              </li>
+              <li id="8F" class="seats" onclick="selectSeat(this)">
+                8F
+              </li>
+              <li id="9F" class="seats" onclick="selectSeat(this)">
+                9F
+              </li>
+              <li id="10F" class="seats" onclick="selectSeat(this)">
+                10F
+              </li>
+            </ul>
+
+            <ul>
+              <li id="1G" class="seats" onclick="selectSeat(this)">
+                1G
+              </li>
+              <li id="2G" class="seats" onclick="selectSeat(this)">
+                2G
+              </li>
+              <li id="3G" class="seats aisle" onclick="selectSeat(this)">
+                3G</li>
+
+              <li id="4G" class="seats" onclick="selectSeat(this)">
+                4G
+              </li>
+              <li id="5G" class="seats" onclick="selectSeat(this)">
+                5G
+              </li>
+              <li id="6G" class="seats" onclick="selectSeat(this)">
+                6G
+              </li>
+              <li id="7G" class="seats aisle" onclick="selectSeat(this)">
+                7G
+              </li>
+              <li id="8G" class="seats" onclick="selectSeat(this)">
+                8G
+              </li>
+              <li id="9G" class="seats" onclick="selectSeat(this)">
+                9G
+              </li>
+              <li id="10G" class="seats" onclick="selectSeat(this)">
+                10G
+              </li>
+            </ul>
+
+            <ul>
+              <li id="1H" class="seats" onclick="selectSeat(this)">
+                1H
+              </li>
+              <li id="2H" class="seats" onclick="selectSeat(this)">
+                2H
+              </li>
+              <li id="3H" class="seats aisle" onclick="selectSeat(this)">
+                3H
+              </li>
+              <li id="4H" class="seats" onclick="selectSeat(this)">
+                4H
+              </li>
+              <li id="5H" class="seats" onclick="selectSeat(this)">
+                5H
+              </li>
+              <li id="6H" class="seats" onclick="selectSeat(this)">
+                6H
+              </li>
+              <li id="7H" class="seats aisle" onclick="selectSeat(this)">
+                7H
+              </li>
+              <li id="8H" class="seats" onclick="selectSeat(this)">
+                8H
+              </li>
+              <li id="9H" class="seats" onclick="selectSeat(this)">
+                9H
+              </li>
+              <li id="10H" class="seats" onclick="selectSeat(this)">
+                10H
+              </li>
+            </ul>
+
+            <ul>
+              <li id="1I" class="seats" onclick="selectSeat(this)">
+                1I
+              </li>
+              <li id="2I" class="seats" onclick="selectSeat(this)">
+                2I
+              </li>
+              <li id="3I" class="seats aisle" onclick="selectSeat(this)">
+                3I
+              </li>
+              <li id="4I" class="seats" onclick="selectSeat(this)">
+                4I
+              </li>
+              <li id="5I" class="seats" onclick="selectSeat(this)">
+                5I
+              </li>
+              <li id="6I" class="seats" onclick="selectSeat(this)">
+                6I
+              </li>
+              <li id="7I" class="seats aisle" onclick="selectSeat(this)">
+                7I
+              </li>
+              <li id="8I" class="seats" onclick="selectSeat(this)">
+                8I
+              </li>
+              <li id="9I" class="seats" onclick="selectSeat(this)">
+                9I
+              </li>
+              <li id="10I" class="seats" onclick="selectSeat(this)">
+                10I
+              </li>
+            </ul>
+          </div>
+          <div id="legenda">
+            <p class="light-grey"></p>
+            <p>Assento Disponível</p>
+            <p class="grey-seat"></p>
+            <p>Assento Selecionado</p>
+            <p class="pink-seat"></p>
+            <p>Assento Vendido</p>
+          </div>
+          <div class="total-purchase">
+            <p id="n-assento"></p>
+            <p>Valor total da compra:</p>
+            <p id="total-price">R$ 0,00</p>
+          </div>
+          <button id="next-btn" onclick="finalizePurchase()">Avançar</button>
+        </section>
+      </section>
+
+      <section class="container-finalizar-compra">
+        <div class="step3">Passo 3</div>
+        <form id="finalizar-compra">
+          <h1>Finalizar compra</h1>
+          <div class="cadastro">
+            <div class="input-box name">
+              <label for="name">Nome Completo:</label>
+              <input type="text" id="name" autocomplete="off" oninput="validatingName()"  class="required" />
+              <div class="span-required"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" 
+                fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+                <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
+              </svg></div>
+              <div id="written-name"></div>
+            </div>
+
+            <div class="input-box email">
+              <label for="email"> Email:</label>
+              <input type="email" id="email" autocomplete="off" oninput="validatingEmail()" class="required"/>
+              <div class="span-required"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" 
+                fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+                <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
+              </svg></div>
+            </div>
+            <div class="input-box cel">
+              <label for="cel">Celular:</label>
+              <input
+                type="text"
+                id="cel"
+                placeholder="(XX) XXXX-XXXX"
+                autocomplete="off"
+                class="required"
+                oninput="validatingCelPhone()"
+                title="Preencha como o exemplo"
+                
+              />
+              <div class="span-required"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" 
+                fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+                <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
+              </svg></div>
+            </div>
+
+            <div class="payment required" >
+            <p class="choose">Forma de pagamento:</p>
+            <div class="span-required sp-req"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" 
+              fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+              <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
+            </svg></div>
+
+            <div class="pix">
+              <input type="radio" id="pix-check" name="payment"  value="pix"  oninput="validatingPayment()" />
+              <img src="./imagens/pix.svg" alt="logo Pix" />
+              <p>Chave Pix:<span>12345678</span></p>
+            </div>
+            <div class="credit-card">
+              <input type="radio" id="credit-card-check" name="payment"  value="credit-card"  oninput="validatingPayment()" />
+              <label for="credit-card">Cartão Crédito:</label>
+              <input
+                type="text"
+                id="credit-card"
+                placeholder="XXXX XXXX XXXX XXXX"
+                minlength="16"
+                maxlength="19"
+              />
+            </div>
+            <div class="credit-card-behind">
+              <label for="cvv-code">Cód.CVV:</label>
+              <input
+                type="text"
+                id="cvv-code"
+                placeholder="XXX"
+                minlength="3"
+                maxlength="3"
+                title="Número atrás do cartão "
+              />
+              <label for="expired">Val.Cartão:</label>
+              <input type="text" id="expired" placeholder="00/00"  /></div>
+            </div>
+          </div>
+          <div id="num-ticket"></div>
+          <button type="submit"   id="finalizar">Finalizar</button>
+        </form>
+      </section>
+      <div id="ticket-container"></div>
+    </main>
+    <script  src="./compra.js"></script>
+  </body>
+</html>

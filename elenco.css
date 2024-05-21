@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
+:root {
+  --pink-logo: rgb(252, 1, 143);
+  --pink-medium: rgb(232, 133, 209);
+  --verde-claro: rgb(219, 248, 252);
+  --azul-celeste: rgb(142, 216, 250);
+  --rosa: rgb(255, 174, 201);
+  --rosa-bebê: rgb(244, 226, 230);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--azul-celeste);
+  position: relative;
+  width: 100%;
+  height: 60%;
+}
+
+header {
+  background-color: var(--rosa-bebê);
+  height: 8rem;
+  color: var(--pink-logo);
+  font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.8rem gray;
+}
+
+.logo {
+  width: 30%;
+}
+
+header img {
+  width: 30%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+nav {
+  width: 70%;
+}
+
+nav ul {
+  --_gap: 6rem;
+  display: flex;
+  justify-content: end;
+  margin-right: 10rem;
+  flex-direction: row;
+  list-style: none;
+}
+
+nav li {
+  overflow: hidden;
+  position: relative;
+  padding-inline: calc(var(--_gap) / 2);
+  opacity: 0.7;
+}
+
+nav li:hover {
+  opacity: 1.2;
+  letter-spacing: 1px;
+}
+
+nav li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background: linear-gradient(to right, var(--rosa) 30%, var(--pink-logo));
+  transition: all 0.8s ease;
+}
+
+nav li:hover::after {
+  width: 100%;
+}
+
+nav a {
+  font-family: "Tinos", serif;
+  color: var(--pink-logo);
+}
+
+.title {
+  margin-left: 3rem;
+}
+
+h1 {
+  font-family: "Licorice", cursive;
+  color: var(--pink-logo);
+  font-size: 8rem;
+  font-weight: 700;
+  margin-top: 4rem;
+}
+
+.slider {
+  width: 182rem;
+  height: 95rem;
+  overflow: hidden;
+}
+
+.slider .slides-elenco .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0.5rem 0.5rem 1rem gray;
+  border-radius: 1.5rem;
+  background-color: var(--rosa-bebê);
+  width: 95%;
+  height: 60rem;
+  margin: auto;
+}
+
+.slide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.img-elenco p {
+  font-size: 5rem;
+  font-family: "Licorice", cursive;
+  color: var(--pink-logo);
+  font-weight: 700;
+  margin-left: 4rem;
+}
+
+.img-elenco img {
+  width: 90%;
+  height: 90%;
+  border-radius: 5rem;
+}
+
+.descricao {
+  width: 50%;
+}
+
+.desc-elenco {
+  width: 90%;
+  font-size: 2.5rem;
+  color: rgb(99, 97, 97);
+  text-align: justify;
+  font-family: "Tinos", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.descricao .enumerar {
+  color: rgb(99, 97, 97);
+  font-size: 2rem;
+  right: 8rem;
+  bottom: 40rem;
+  position: absolute;
+  outline: none;
+}
+
+.enumerar::selection {
+  background-color: transparent;
+}
+
+.img-elenco .k {
+  color: rgb(99, 172, 241);
+}
+
+.img-elenco .g {
+  color: var(--pink-medium);
+}
+
+.img-elenco .sa {
+  color: var(--rosa);
+}
+
+.img-elenco .ceo {
+  color: rgb(156, 131, 133);
+}
+
+.img-elenco .bp {
+  color: rgb(214, 0, 12);
+}
+
+.img-elenco .ok {
+  color: rgb(67, 166, 133);
+}
+
+.img-elenco .esc {
+  color: rgb(248, 135, 266);
+}
+
+.img-elenco .ktb {
+  color: rgb(162, 121, 232);
+}
+
+.img-elenco .est {
+  color: rgb(242, 170, 53);
+}
+
+.img-elenco .dr {
+  color: rgb(253, 213, 76);
+}
+
+.img-elenco .al {
+  color: rgb(243, 123, 48);
+}
+
+.slides-elenco {
+  display: none;
+}
+
+.slides-elenco.active {
+  display: block;
+}
+
+.slider #prev,
+.slider #next {
+  position: absolute;
+  top: 45%;
+  color: grey;
+  background: var(--pink-logo);
+  height: 65px;
+  width: 65px;
+  line-height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  font-weight: 700;
+  box-shadow: 0.2rem 0.2rem 0.8rem grey;
+}
+
+.slider #prev:hover,
+.slider #next:hover {
+  color: rgb(70, 67, 67);
+  box-shadow: inset 0.2rem 0.2rem 0.8rem rgb(70, 67, 67);
+}
+
+.slider #next {
+  right: 2rem;
+}
+
+.slider #prev {
+  left: 0.5rem;
+}
+
+@media all and (max-width: 1030px) {
+  header img {
+    width: 28%;
+    height: 4.5rem;
+  }
+  nav ul {
+    --_gap: 5rem;
+  }
+
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+  }
+
+  nav a {
+    font-size: 2.5rem;
+  }
+  h1 {
+    font-size: 5.5rem;
+  }
+  .slider {
+    width: 100rem;
+    overflow: hidden;
+  }
+  .slider .slides-elenco .slide {
+    margin-top: 1rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  header img {
+    width: 28%;
+    height: 4.5rem;
+  }
+
+  nav ul {
+    --_gap: 0.5rem;
+    margin-right: 4rem;
+  }
+
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+    margin-left: 2rem;
+  }
+
+  nav a {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+  .slider {
+    width: 73rem;
+    overflow: hidden;
+  }
+  .slider .slides-elenco .slide {
+    margin-top: 1rem;
+  }
+  .img-elenco p {
+    font-size: 4rem;
+
+    margin-left: 1rem;
+  }
+
+  .img-elenco img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
+  .desc-elenco {
+    font-size: 1.5rem;
+  }
+  .slider #prev,
+  .slider #next {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+@media all and (max-width: 430px) {
+  header img {
+    width: 5rem;
+    height: 4rem;
+  }
+  nav ul {
+    --_gap: 0.7rem;
+    margin-right: 1rem;
+  }
+
+  nav li {
+    padding-inline: calc(var(--_gap) / 2);
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 1.3rem;
+  }
+  h1 {
+    margin: 0%;
+  }
+  .slider {
+    width: 42rem;
+    overflow: hidden;
+  }
+  .slider .slides-elenco .slide {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content {
+    width: 100%;
+    padding: 0.2rem;
+    gap: 1rem;
+  }
+  .descricao {
+    width: 100%;
+    margin-left: 2rem;
+    top: 0%;
+  }
+  .img-elenco p {
+    font-size: 4rem;
+
+    margin-left: 1rem;
+  }
+
+  .img-elenco img {
+    width: 95%;
+    height: 60%;
+    border-radius: 1rem;
+    margin: auto;
+  }
+  .slider #prev,
+  .slider #next {
+    position: absolute;
+    top: 39%;
+    height: 45px;
+    width: 45px;
+  }
+  .desc-elenco {
+    font-size: 1.3rem;
+  }
+  .issa {
+    font-size: 1.2rem;
+  }
+  .descricao .enumerar {
+    position: absolute;
+    font-size: 1.7rem;
+    top: 18rem;
+    right: 3rem;
+  }
+}
+@media all and (max-width: 360px) {
+  header {
+    display: block;
+    height: 6.5rem;
+  }
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 3.8rem;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    transform: translateX(-4rem);
+  }
+  nav li {
+    padding: 5px;
+  }
+  h1 {
+    font-size: 4rem;
+    margin-top: 1rem;
+  }
+  .slider {
+    width: 35rem;
+    overflow: hidden;
+  }
+  .slider .slides-elenco .slide {
+    width: 98%;
+    height: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .slider #prev,
+  .slider #next {
+    position: absolute;
+    top: 30%;
+    height: 45px;
+    width: 45px;
+  }
+}
