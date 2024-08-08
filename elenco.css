@@ -97,12 +97,9 @@ nav a {
 
 .title {
   margin-left: 3rem;
-}
-
-h1 {
   font-family: "Licorice", cursive;
   color: var(--pink-logo);
-  font-size: 8rem;
+  font-size: clamp(18px, 2.8vw, 35px);
   font-weight: 700;
   margin-top: 4rem;
 }
@@ -121,9 +118,9 @@ h1 {
   box-shadow: 0.5rem 0.5rem 1rem gray;
   border-radius: 1.5rem;
   background-color: var(--rosa-bebê);
-  width: 95%;
-  height: 60rem;
-  margin: auto;
+  width: 130rem;
+  height: 40rem;
+  margin: 1rem 2rem 1rem 2rem;
 }
 
 .slide {
@@ -163,7 +160,7 @@ h1 {
 
 .desc-elenco {
   width: 90%;
-  font-size: 2.5rem;
+  font-size: clamp(14px, 2.5vw, 20px);
   color: rgb(99, 97, 97);
   text-align: justify;
   font-family: "Tinos", serif;
@@ -241,7 +238,7 @@ h1 {
 .slider #prev,
 .slider #next {
   position: absolute;
-  top: 45%;
+  top: 35%;
   color: grey;
   background: var(--pink-logo);
   height: 65px;
@@ -295,6 +292,7 @@ h1 {
   }
   .slider .slides-elenco .slide {
     margin-top: 1rem;
+    width: 98rem;
   }
 }
 
@@ -322,11 +320,12 @@ h1 {
     font-size: 5rem;
   }
   .slider {
-    width: 73rem;
+    width: 75rem;
     overflow: hidden;
   }
   .slider .slides-elenco .slide {
     margin-top: 1rem;
+    width: 73rem;
   }
   .img-elenco p {
     font-size: 4rem;
